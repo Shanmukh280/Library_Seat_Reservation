@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video and Content Layout</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            color: #006660;
+            overflow: hidden;
+            background-color: #002223;/* Prevent scrolling during transition */
+        }
+        .video-container {
+            width: 80%; /* Fixed width for the video container */
+            position: relative;
+            overflow: hidden;
+        }
+        .video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the video covers the area */
+        }
+        .content-container {
+            flex: 1; /* Takes up the remaining width */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #002223; /* Dark background for contrast */
+        }
+        h1 {
+            margin: 0;
+            font-size: 3em; /* Increase font size */
+            font-weight: bold; /* Make it bold */
+            color: #007BFF; /* Vibrant color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add text shadow */
+            background: linear-gradient(90deg, #007BFF, #00CFFF); /* Gradient background */
+            -webkit-background-clip: text; /* Clip background to text */
+            -webkit-text-fill-color: transparent; /* Make text fill transparent */
+            padding: 10px; /* Add padding */
+            border-radius: 10px; /* Rounded corners */
+            animation: fadeIn 1s ease-in; /* Animation */
+        }
+        h2 {
+            margin: 0;
+            font-size: 1em; /* Increase font size */
+            font-weight: bold; /* Make it bold */
+            color: #007BFF; /* Vibrant color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add text shadow */
+            background: linear-gradient(90deg, #007BFF, #00CFFF); /* Gradient background */
+            -webkit-background-clip: text; /* Clip background to text */
+            -webkit-text-fill-color: transparent; /* Make text fill transparent */
+            padding: 10px; /* Add padding */
+            border-radius: 10px; /* Rounded corners */
+            animation: fadeIn 1s ease-in; /* Animation */
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF; /* Bootstrap primary color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+        .wrapper {
+            display: flex;
+            width: 100%;
+            transition: transform 0.5s ease; /* Transition for sliding effect */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="video-container">
+        <video class="video" autoplay loop muted>
+            <source src="C:\Users\chvys\Downloads\backpart.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="content-container">
+        <h1>An investment in knowledge pays the best interest!</h1>
+        <br>
+        <h2>Welcome to KNOWLEDGE HUB</h2>
+        <button onclick="window.location.href='lib2.html'">Click here</button>
+    </div>
+
+   
+
+</body>
+</html>
