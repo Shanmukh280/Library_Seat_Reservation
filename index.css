@@ -1,0 +1,139 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background Gradient */
+body {
+    background: linear-gradient(to right, #6a0dad, #00bfff); /* Purple to Blue Gradient */
+    font-family: Arial, sans-serif;
+    color: white; /* Changed the text color to white */
+}
+
+/* About Page Section */
+.about-section {
+    text-align: center;
+    padding: 30px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    /* No background color for the content section, so it blends with the page gradient */
+}
+
+/* Headings */
+h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: purple; /* Tomato red color for h1 */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: purple; /* Lime green color for h2 */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+/* Paragraphs */
+p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: white; /* Text color for paragraphs set to white */
+}
+
+ul {
+    list-style-type: none;
+    margin: 20px 0;
+    padding-left: 0;
+}
+
+ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: white; /* White text color for list items */
+}
+
+ul li strong {
+    color: #ffcc00; /* Golden text for the important parts */
+}
+
+/* Table for Library Timings */
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table, th, td {
+    border: 1px solid #4111ee;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: rgba(59, 26, 136, 0.4);
+    font-weight: bold;
+    color: #400f8f;
+}
+
+td {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+td:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons or Links (For Contact Us or Other Actions) */
+button, a {
+    padding: 10px 15px;
+    background-color: #ffcc00;
+    color: #333;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+button:hover, a:hover {
+    background-color: #166bda;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 20px;
+    }
+
+    h1, h2 {
+        font-size: 24px;
+    }
+
+    p, ul li {
+        font-size: 14px;
+    }
+}
