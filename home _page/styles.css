@@ -154,10 +154,10 @@ body {
 }
 
 /* Background Images */
-.about { background: url('C:/Users/n2104/Desktop/project/home page/about.jpg') center/cover; }
-.seat-availability { background: url('C:/Users/n2104/Desktop/project/home page/seats.jpg') center/cover; }
-.seat-booking { background: url('C:/Users/n2104/Desktop/project/home page/seat.jpg') center/cover; }
-.books-available { background: url('C:/Users/n2104/Desktop/project/home page/books.jpg') center/cover; }
+.about { background: url('about.jpg') center/cover; }
+.seat-availability { background: url('seats.jpg') center/cover; }
+.seat-booking { background: url('seat.jpg') center/cover; }
+.books-available { background: url('books.jpg') center/cover; }
 
 /* Edit Button Styling */
 .edit-btn {
