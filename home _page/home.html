@@ -246,16 +246,16 @@
 
     <!-- Feature Cards Section -->
     <section class="cards">
-        <div class="card about" onclick="navigateTo('about.html')">
+        <div class="card about" onclick="navigateTo('../about/aboutpage.html')">
             <h2>About Library</h2>
         </div>
-        <div class="card seat-availability" onclick="navigateTo('seat-availability.html')">
+        <div class="card seat-availability" onclick="navigateTo('availability.html')">
             <h2>Seat Availability</h2>
         </div>
-        <div class="card seat-booking" onclick="navigateTo('seat-booking.html')">
+        <div class="card seat-booking" onclick="navigateTo('../reservation/seatreservation.html')">
             <h2>Seat Booking</h2>
         </div>
-        <div class="card books-available" onclick="navigateTo('books-available.html')">
+        <div class="card books-available" onclick="navigateTo('../about/book.html')">
             <h2>Books Available</h2>
         </div>
     </section>
@@ -341,17 +341,34 @@
 
         // Function to delete account
         function deleteAccount() {
-            if (confirm('Are you sure you want to delete your account?')) {
-                // Implement account deletion logic here
-                alert('Account deleted!');
+            // Show confirmation alert before deleting account
+            if (confirm("Are you sure you want to delete your account? This action cannot be undone.")) {
+                alert("Your account has been deleted.");
+                
+                // Clear local storage or session storage if needed
+                localStorage.clear();
+                sessionStorage.clear();
+                
+                // Redirect to register page
+                window.location.href = "../about/register.html"; // Ensure the correct path
             }
         }
+        
+        
 
         // Function for log out
         function logout() {
-            // Implement logout logic here
+            // Show logout success alert
             alert('Logged out successfully!');
+        
+            // Clear session storage or local storage if needed
+            localStorage.clear();
+            sessionStorage.clear();
+        
+            // Redirect to register page
+            window.location.href = "../about/register.html"; // Ensure the correct path
         }
+        
 
         // Navigate to different pages
         function navigateTo(page) {
@@ -363,12 +380,7 @@
             document.getElementById('cameraInput').click();
         }
         // Function for log out
-function logout() {
-    // Implement logout logic here if needed
-    
-    // Redirect to the login page
-    window.location.href = 'C:/Users/n2104/Desktop/lib_seat/Library_Seat_Reservation/firstpage/loginpage.html'; // Replace 'login.html' with your actual login page URL
-}
+
 
     </script>
 </body>
