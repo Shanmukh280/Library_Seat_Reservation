@@ -11,7 +11,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Arial', sans-serif;
             background-color: #00212A;
@@ -175,7 +175,7 @@
 <body>
     <div class="register-container">
         <h2>Register Your Account</h2>
-        <form action="#" method="POST">
+        <form action="frontpage.html" method="POST" onsubmit="handleRedirect(event)">
             <!-- Full Name -->
             <div class="form-group">
                 <input type="text" id="name" name="name" required placeholder=" " />
@@ -249,8 +249,23 @@
         </form>
 
         <div class="register-footer">
-            <p>Already have an account? <a href="#">Login</a></p>
+            <p>Already have an account? <a href="#" onclick="redirectToLoginPage()">Login</a></p>
         </div>
     </div>
+    <script>
+        function handleRedirect(event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+    
+            // Here you can add any form validation or processing before redirecting
+    
+            // Redirect to frontpage.html after the form is "submitted"
+            window.location.href = '../front_login_pages/frontpage.html';
+        }
+        function redirectToLoginPage() {
+            window.location.href = '../front_login_pages/loginpage.html';
+        }
+
+    </script>
 </body>
 </html>
