@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books Availability - Library Seat Reservation System</title>
+    <link rel="stylesheet" href="book.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <h1>Library Books Availability</h1>
+            <p>Explore our diverse collection and find books available in our library.</p>
+        </header>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <h2>Search Books</h2>
+            <input type="text" id="bookSearch" placeholder="Search for books..." onkeyup="searchBooks()">
+        </section>
+
+        <!-- Books Table Section -->
+        <section class="books-section">
+            <h2>Available Books</h2>
+            <table id="booksTable">
+                <thead>
+                    <tr>
+                        <th>Book Title</th>
+                        <th>Author</th>
+                        <th>Genre</th>
+                        <th>Availability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample Book Data -->
+                    <tr>
+                        <td>Introduction to Programming</td>
+                        <td>John Doe</td>
+                        <td>Computer Science</td>
+                        <td>Available</td>
+                    </tr>
+                    <tr>
+                        <td>Advanced Algorithms</td>
+                        <td>Jane Smith</td>
+                        <td>Computer Science</td>
+                        <td>Not Available</td>
+                    </tr>
+                    <tr>
+                        <td>Data Structures in Depth</td>
+                        <td>Mark Taylor</td>
+                        <td>Computer Science</td>
+                        <td>Available</td>
+                    </tr>
+                    <tr>
+                        <td>Modern Web Development</td>
+                        <td>Emily Davis</td>
+                        <td>Web Development</td>
+                        <td>Available</td>
+                    </tr>
+                    <tr>
+                        <td>Mastering Python</td>
+                        <td>James Wilson</td>
+                        <td>Programming</td>
+                        <td>Not Available</td>
+                    </tr>
+                    <tr>
+                        <td>Introduction to Databases</td>
+                        <td>Alice Cooper</td>
+                        <td>Database Systems</td>
+                        <td>Available</td>
+                    </tr>
+                    <tr>
+                        <td>AI Fundamentals</td>
+                        <td>Chris Allen</td>
+                        <td>Artificial Intelligence</td>
+                        <td>Available</td>
+                    </tr>
+                    <tr>
+                        <td>Front-End Development</td>
+                        <td>Rachel Green</td>
+                        <td>Web Development</td>
+                        <td>Not Available</td>
+                    </tr>
+                    <tr>
+                        <td>Machine Learning Basics</td>
+                        <td>Michael Brown</td>
+                        <td>Machine Learning</td>
+                        <td>Available</td>
+                    </tr>
+                    <tr>
+                        <td>Advanced React</td>
+                        <td>Sarah Lee</td>
+                        <td>Web Development</td>
+                        <td>Not Available</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script>
+        function searchBooks() {
+            const searchInput = document.getElementById("bookSearch").value.toLowerCase();
+            const rows = document.getElementById("booksTable").getElementsByTagName("tr");
+            
+            for (let i = 1; i < rows.length; i++) {
+                let row = rows[i];
+                let title = row.cells[0].textContent.toLowerCase();
+                let author = row.cells[1].textContent.toLowerCase();
+                let genre = row.cells[2].textContent.toLowerCase();
+                let availability = row.cells[3].textContent.toLowerCase();
+
+                if (title.includes(searchInput) || author.includes(searchInput) || genre.includes(searchInput) || availability.includes(searchInput)) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #00212A;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .register-container {
+            background-color: #fff;
+            width: 500px; /* Increased width */
+            padding: 20px; /* Decreased height */
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transform: translateY(-20px);
+            animation: fadeIn 1s ease-out;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #008080;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 15px; /* Adjusted margin */
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%; /* Full width */
+            padding: 10px; /* Decreased height */
+            font-size: 1rem;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            outline: none;
+            transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background-color: #f9f9f9;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #008080;
+            box-shadow: 0 0 8px rgba(0, 128, 128, 0.3);
+        }
+
+        /* Floating Labels */
+        .form-group label {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            font-size: 1rem;
+            color: #777;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .form-group input:focus + label,
+        .form-group input:not(:placeholder-shown) + label,
+        .form-group select:focus + label,
+        .form-group select:not(:placeholder-shown) + label {
+            top: -10px;
+            font-size: 0.9rem;
+            color: #008080;
+        }
+
+        /* Style for Gender Radio Buttons */
+        .gender-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px; /* Adjusted margin */
+        }
+
+        .gender-group .gender {
+            display: flex;
+            align-items: center;
+        }
+
+        .gender-group input {
+            margin-right: 10px;
+            accent-color: #008080;
+        }
+
+        .gender-group label {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .submit-btn {
+            background-color: #008080;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            border: none;
+            font-size: 1.1rem;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+        }
+
+        .submit-btn:hover {
+            background-color: #006666;
+            transform: scale(1.05);
+        }
+
+        .submit-btn:active {
+            transform: scale(1);
+        }
+
+        .register-footer {
+            margin-top: 20px;
+        }
+
+        .register-footer p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .register-footer a {
+            color: #008080;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .register-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 500px) {
+            .register-container {
+                width: 90%;
+                padding: 25px;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h2>Register Your Account</h2>
+        <form action="#" method="POST">
+            <!-- Full Name -->
+            <div class="form-group">
+                <input type="text" id="name" name="name" required placeholder=" " />
+                <label for="name">Full Name</label>
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-group">
+                <input type="email" id="email" name="email" required placeholder=" " />
+                <label for="email">Email Address</label>
+            </div>
+
+            <!-- Gender -->
+            <div class="gender-group">
+                <label for="gender" style="color: #000;">Gender:</label>
+
+                <div class="gender">
+                    <input type="radio" id="male" name="gender" value="Male" required />
+                    <label for="male">Male</label>
+                </div>
+                <div class="gender">
+                    <input type="radio" id="female" name="gender" value="Female" />
+                    <label for="female">Female</label>
+                </div>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <input type="password" id="password" name="password" required placeholder=" " />
+                <label for="password">Password</label>
+            </div>
+
+            <!-- Mobile Number -->
+            <div class="form-group">
+                <input type="tel" id="mobile" name="mobile" required placeholder=" " />
+                <label for="mobile">Mobile Number</label>
+            </div>
+
+            <!-- Year -->
+            <div class="form-group">
+                <select id="year" name="year" required>
+                    <option value="">Select Year</option>
+                    <option value="1">1st Year</option>
+                    <option value="2">2nd Year</option>
+                    <option value="3">3rd Year</option>
+                    <option value="4">4th Year</option>
+                </select>
+                <label for="year">Year</label>
+            </div>
+
+            <!-- Branch -->
+            <div class="form-group">
+                <select id="branch" name="branch" required>
+                    <option value="">Select Branch</option>
+                    <option value="CSE">Computer Science</option>
+                    <option value="ECE">Electronics and Communication</option>
+                    <option value="EEE">Electrical Engineering</option>
+                    <option value="ME">Mechanical Engineering</option>
+                </select>
+                <label for="branch">Branch</label>
+            </div>
+
+            <!-- ID Number -->
+            <div class="form-group">
+                <input type="text" id="id" name="id" required placeholder=" " />
+                <label for="id">ID Number</label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+
+        <div class="register-footer">
+            <p>Already have an account? <a href="#">Login</a></p>
+        </div>
+    </div>
+</body>
+</html>
