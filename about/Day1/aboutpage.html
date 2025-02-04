@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Seat Reservation System</title>
+    <style>
+        /* Basic styles for body and overall layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #00212A; /* Background color */
+            color: #f4f4f4; /* Text color to contrast with dark background */
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: white;
+            text-align: center;
+            font-size: 50px;
+        }
+
+        /* Features Section Styling */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px;
+            flex-wrap: wrap;
+        }
+
+        /* Apply the same size to feature cards as instruction cards */
+        .feature-card, .instruction-card {
+            width: 250px;
+            height: 150px; /* Set height to 150px */
+            margin: 50px;
+            border-radius: 12px; /* Rounded corners for feature and instruction cards */
+        }
+
+        .feature-card {
+            perspective: 1000px; /* Add perspective for the flip effect */
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .feature-card:hover .card-inner {
+            transform: rotateY(180deg); /* Flip effect */
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10px; /* Adjusted padding */
+            flex-direction: column;
+        }
+
+        .card-front {
+            background-color: #f0f0f0;
+            border-radius: 12px; /* Rounded corners for the front */
+        }
+
+        .card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px; /* Rounded corners for the image */
+        }
+
+        /* Heading on the front side */
+        .card-front h3 {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .card-back {
+            background-color: white;
+            transform: rotateY(180deg);
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px; /* Rounded corners for the back */
+        }
+
+        /* Card Back Heading at the Top, Text directly below the heading */
+        .card-back h3 {
+            color: #333;
+            margin: 0; /* Remove any space between heading and text */
+        }
+
+        .card-back p {
+            color: #555;
+            margin-top: 10px; /* Adds space between the heading and text */
+            margin-bottom: 10px; /* Adds some space at the bottom */
+        }
+
+        /* Add gap between Easy Booking and User-Friendly Interface */
+        .feature-card:nth-child(2) {
+            margin-right: 30px; /* Adds space after Easy Booking card */
+        }
+
+        /* Add space between the 2nd and 4th feature cards */
+        .feature-card:nth-child(4) {
+            margin-top: 40px; /* Adds more space between the 2nd and 4th cards */
+        }
+
+        /* Instructions Section Styling */
+        .instructions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 40px 0;
+        }
+
+        .instruction-card {
+            background-color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 12px; /* Rounded corners for instruction cards */
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 150px; /* Set height to 150px */
+        }
+
+        .instruction-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .instruction-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .instruction-card p {
+            color: #555;
+        }
+
+        /* Timings Table Styling */
+        .table-container {
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .timings-table {
+            border-color: black;
+            width: 70%;
+            border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .timings-table th, .timings-table td {
+            color:black;
+            padding: 12px 20px;
+            text-align: left;
+            border-bottom: 1px solid black
+        }
+
+        .timings-table th {
+            background-color: white;
+            color: black;
+        }
+
+        .timings-table tr:hover {
+            background-color: white;
+        }
+
+        /* Contact Us Section Styling */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        ul li a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Content Area -->
+    <div class="container">
+        <!-- Features Section -->
+        <h1>Features</h1>
+        <div class="features">
+            <div class="feature-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>Real-time Seat Availability</h3>
+                        <img src=lib.jpg alt="Real-time Seat Availability" />
+                    </div>
+                    <div class="card-back">
+                        <h3>Real-time Seat Availability</h3>
+                        <p>See the current status of seats in various areas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>Easy Booking</h3>
+                        <img src=booking.jpg alt="Easy Booking" />
+                    </div>
+                    <div class="card-back">
+                        <h3>Easy Booking</h3>
+                        <p>Quick and easy reservation system with an option to cancel or modify bookings.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>Book Information</h3>
+                        <img src=book.jpg alt="Book Information" />
+                    </div>
+                    <div class="card-back">
+                        <h3>Book Information</h3>
+                        <p>Get details of books available in the library, including titles, authors, and availability.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>User-Friendly Interface</h3>
+                        <img src=user.jpg alt="User-Friendly Interface" />
+                    </div>
+                    <div class="card-back">
+                        <h3>User-Friendly Interface</h3>
+                        <p>The system is simple and intuitive to navigate.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructions Section (Rules and Regulations) -->
+        <h2>Instructions</h2>
+        <div class="instructions">
+            <div class="instruction-card">
+                <h3>Booking Limit</h3>
+                <p>You can reserve a seat for up to 4 hours per session.</p>
+            </div>
+            <div class="instruction-card">
+                <h3>Cancelations</h3>
+                <p>Please cancel your reservation at least 2 hours before the reserved time if you no longer need the seat.</p>
+            </div>
+            <div class="instruction-card">
+                <h3>Timely Arrival</h3>
+                <p>Arrive at your reserved seat within 15 minutes of the start time. Late arrivals may lose their reservation.</p>
+            </div>
+            <div class="instruction-card">
+                <h3>Respect Other Users</h3>
+                <p>Please maintain quiet behavior and avoid disturbing others while using the library.</p>
+            </div>
+            <div class="instruction-card">
+                <h3>Personal Belongings</h3>
+                <p>Personal items should not occupy multiple seats.</p>
+            </div>
+        </div>
+
+        <!-- Library Timings Section -->
+        <h2>Library Timings</h2>
+        <div class="table-container">
+            <table class="timings-table">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Opening Time</th>
+                        <th>Closing Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday - Friday</td>
+                        <td>8:00 AM</td>
+                        <td>10:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>9:00 AM</td>
+                        <td>6:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>Closed</td>
+                        <td>Closed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Contact Us Section -->
+        <h2>Contact Us</h2>
+        <p>If you have any questions, feedback, or need assistance with the Library Seat Reservation System, please don't hesitate to contact us:</p>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:support@library.com">support@library.com</a></li>
+            <li><strong>Phone:</strong> 1445678932</li>
+            <li><strong>Address:</strong> 123 Library Lane, Vijayawada, India</li>
+        </ul>
+        <p>We'd love to hear from you!</p>
+    </div>
+
+</body>
+</html>
