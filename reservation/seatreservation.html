@@ -301,19 +301,25 @@
         }
 
         confirmBtn.addEventListener('click', () => {
-            selectedSeats.forEach(seatIndex => {
-                document.querySelectorAll('.seat').forEach(seat => {
-                    if (seat.dataset.index == seatIndex) {
-                        seat.classList.remove('available', 'selected');
-                        seat.classList.add('booked');
-                    }
-                });
-            });
-            selectedSeats.clear();
-            confirmBtn.disabled = true;
+            let selectedFloor = floorSelect.value;  // Get floor number
+            let bookedSeatsArray = Array.from(selectedSeats); // Convert selected seats to array
+            let currentTime = new Date().toLocaleString(); // Generate timestamp
+        
+            // Store details in sessionStorage
+            sessionStorage.setItem('bookedSeats', JSON.stringify(bookedSeatsArray));
+            sessionStorage.setItem('floor', selectedFloor);
+            sessionStorage.setItem('bookingTime', currentTime);
+        
+            // Simulate user profile (Fetch from login if available)
+            sessionStorage.setItem('userName', "John Doe");
+            sessionStorage.setItem('userEmail', "john.doe@example.com");
+        
+            // Redirect to confirmation page
             window.location.href = 'confirmation.html';
-            
         });
+        
+        
+        
 
         const floorSelect = document.getElementById('floorSelect');
         floorSelect.addEventListener('change', function() {
