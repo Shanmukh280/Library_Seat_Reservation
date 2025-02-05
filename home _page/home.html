@@ -13,6 +13,7 @@
         box-sizing: border-box;
         font-family: 'Arial', sans-serif;
     }
+
     /* Full Page Background */
     body {
         background-color: #00212A;
@@ -206,7 +207,7 @@
     </style>
 </head>
 <body>
-    <!-- Header Container: Profile Button + Scanner Icon -->
+    <!-- Header Container: Profile Button + Scanner Icon + Quote in Same Row -->
     <div class="header-container">
         <button class="profile-btn" id="profileButton" onclick="toggleUserDetails()">Profile</button>
 
@@ -224,7 +225,7 @@
     <!-- User Details Section (Initially Hidden) -->
     <div class="user-details">
         <div style="position: relative;">
-            <img src="back.jpg" alt="Profile Picture" class="profile-pic" id="profilePic" onclick="triggerFileUpload()">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-pic" id="profilePic" onclick="triggerFileUpload()">
             <input type="file" class="profile-pic-file" accept="image/*" onchange="uploadProfilePic(event)" id="fileInput">
             <button class="edit-profile-btn" onclick="triggerFileUpload()">Edit</button>
         </div>
@@ -245,7 +246,7 @@
 
     <!-- Feature Cards Section -->
     <section class="cards">
-        <div class="card about" onclick="navigateTo('../about/Day1/aboutpage.html')">
+        <div class="card about" onclick="navigateTo('../about/aboutpage.html')">
             <h2>About Library</h2>
         </div>
         <div class="card seat-availability" onclick="navigateTo('availability.html')">
@@ -254,7 +255,7 @@
         <div class="card seat-booking" onclick="navigateTo('../reservation/seatreservation.html')">
             <h2>Seat Booking</h2>
         </div>
-        <div class="card books-available" onclick="navigateTo('../about/Day2/book.html')">
+        <div class="card books-available" onclick="navigateTo('../about/book.html')">
             <h2>Books Available</h2>
         </div>
     </section>
@@ -379,8 +380,81 @@
             document.getElementById('cameraInput').click();
         }
         // Function for log out
+// Define an array of quotes
+const quotes = [
+    "The only thing that you absolutely have to know, is the location of the library. - Albert Einstein",
+    "Libraries were full of ideas—perhaps the most dangerous and powerful of all weapons. - Sarah J. Maas",
+    "Cutting libraries during a recession is like cutting hospitals during a plague. - Eleanor Crumblehulme",
+    "Libraries are the cornerstone of democracy—where information is free and equally available to everyone. - David Horowitz"
+];
+
+let currentQuoteIndex = 0;
+
+// Function to change the quote in the quote container
+function changeQuote() {
+    document.getElementById('quote').textContent = quotes[currentQuoteIndex];
+    currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+}
+
+function openCamera() {
+    navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function (stream) {
+        let videoElement = document.createElement("video");
+        videoElement.srcObject = stream;
+        videoElement.setAttribute("autoplay", "");
+        videoElement.style.position = "fixed";
+        videoElement.style.top = "50%";
+        videoElement.style.left = "50%";
+        videoElement.style.transform = "translate(-50%, -50%)";
+        videoElement.style.width = "80%";
+        videoElement.style.maxWidth = "500px";
+        videoElement.style.border = "5px solid white";
+        videoElement.style.borderRadius = "10px";
+        videoElement.style.zIndex = "1000";
+
+        // Find the scan button position
+        let scanBtn = document.querySelector(".scan-btn");
+        let scanBtnRect = scanBtn.getBoundingClientRect();
+
+        // Create a close button
+        let closeButton = document.createElement("button");
+        closeButton.innerText = "Close Camera";
+        closeButton.style.position = "absolute";
+        closeButton.style.top = `${scanBtnRect.bottom + 10}px`; // Position below scan button
+        closeButton.style.left = `${scanBtnRect.left}px`; // Align left with scan button
+        closeButton.style.padding = "10px 15px";
+        closeButton.style.backgroundColor = "red";
+        closeButton.style.color = "white";
+        closeButton.style.border = "none";
+        closeButton.style.borderRadius = "5px";
+        closeButton.style.cursor = "pointer";
+        closeButton.style.zIndex = "1001";
+
+        closeButton.onclick = function () {
+            stream.getTracks().forEach(track => track.stop()); // Stop the camera
+            document.body.removeChild(videoElement);
+            document.body.removeChild(closeButton);
+        };
+
+        document.body.appendChild(videoElement);
+        document.body.appendChild(closeButton);
+    })
+    .catch(function (err) {
+        alert("Error accessing camera: " + err.message);
+    });
+}
+
+
+
+// Set an interval to change the quote every 5 seconds
+setInterval(changeQuote, 5000); // Change quote every 5 seconds
+
+// Initial quote change
+changeQuote();
 
 
     </script>
 </body>
 </html>
+
+
