@@ -6,53 +6,76 @@
     <title>Booking Confirmation</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             text-align: center;
             margin: 0;
             padding: 20px;
             background: #00212A;
+            color: #f0f8ff;
         }
         
         .confirmation-container {
-            background: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
+            background: #023047;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            max-width: 450px;
             margin: auto;
-        }
-        #seatList {
-            list-style-position: inside;  /* Moves bullet point closer to text */
-            padding-left: 0;  /* Removes default padding */
-            margin: 0;  /* Removes default margin */
+            color: #ffffff;
         }
         
+        h2 {
+            color: #ffb703;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        #seatList {
+            list-style: none;
+            padding: 0;
+        }
+        
+        #seatList li {
+            padding: 8px;
+            margin: 5px 0;
+            color: white;
+        }
         
         .download-btn {
             margin-top: 20px;
-            padding: 10px 15px;
-            background-color: #007bff;
+            padding: 12px 20px;
+            background-color: #4CAF50; /* Changed to green */
             color: white;
             border: none;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s;
         }
 
         .download-btn:hover {
-            background-color: #0056b3;
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
     <div class="confirmation-container" id="printSection">
         <h2>Booking Confirmation</h2>
-        <p><strong>User Name:</strong> <span id="userName"></span></p>
-        <p><strong>Email:</strong> <span id="userEmail"></span></p>
-        <p><strong>Booking Time:</strong> <span id="bookingTime"></span></p>
-        <p><strong>Floor Number:</strong> <span id="floorNumber"></span></p>
-        <p><strong>Number of Seats Booked:</strong> <span id="totalSeats"></span></p>
+        <p><strong>User Name:</strong> <span id="userName">John Doe</span></p>
+        <p><strong>Email:</strong> <span id="userEmail">johndoe@example.com</span></p>
+        <p><strong>Booking Time:</strong> <span id="bookingTime">2/5/2025, 10:00 AM</span></p>
+        <p><strong>Floor Number:</strong> <span id="floorNumber">3</span></p>
+        <p><strong>Number of Seats Booked:</strong> <span id="totalSeats">2</span></p>
         <p><strong>Booked Seats:</strong></p>
-        <ul id="seatList"></ul>
+        <ul id="seatList">
+            <li>Seat A12</li>
+            <li>Seat B7</li>
+        </ul>
         <p>Thank you for reserving your seats.</p>
     </div>
 
@@ -60,34 +83,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
-        function loadBookingDetails() {
-            // Retrieve stored details
-            let bookedSeats = JSON.parse(sessionStorage.getItem('bookedSeats')) || [];
-            let floor = sessionStorage.getItem('floor') || "N/A";
-            let userName = sessionStorage.getItem('userName') || "Guest User";
-            let userEmail = sessionStorage.getItem('userEmail') || "Not provided";
-            let bookingTime = sessionStorage.getItem('bookingTime') || new Date().toLocaleString();
-            
-            // Display user details
-            document.getElementById('userName').textContent = userName;
-            document.getElementById('userEmail').textContent = userEmail;
-            document.getElementById('bookingTime').textContent = bookingTime;
-            document.getElementById('floorNumber').textContent = floor;
-            document.getElementById('totalSeats').textContent = bookedSeats.length; // Number of seats booked
-
-            // Display booked seats
-            let seatList = document.getElementById('seatList');
-            seatList.innerHTML = bookedSeats.length > 0 
-                ? bookedSeats.map(seat => `<li>Seat ${seat}</li>`).join('') 
-                : "<li>No seats booked.</li>";
-        }
-
         function downloadPDF() {
             const element = document.getElementById('printSection');
             html2pdf().from(element).save("Seat_Booking_Details.pdf");
         }
-
-        window.onload = loadBookingDetails;
     </script>
 </body>
 </html>
