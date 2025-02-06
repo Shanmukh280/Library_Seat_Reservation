@@ -1,0 +1,30 @@
+﻿Project Name: Library Management System
+Day-wise Progress Report
+Day 1:
+* Created a GitHub account and installed Git.
+* Designed the front page
+* Developed the login page to allow users to access the system.
+Day 2:
+* Researched various videos and photos  related to the project theme 
+* added two relevant videos on different pages to make it more attractive.
+Day 3:
+* Created a basic seat reservation page that contains a single floor with 50 seats.
+* Implemented a confirmation button to allow users to finalize their reservations.
+Day 4:
+* Added a background image to the seat reservation page 
+* Applied a background color to the front page and login page to maintain a consistent theme.
+Day 5:
+* Expanded the seat reservation system by adding two additional floors and increasing the total seating capacity.
+* added a drinking water slot to enhance user convenience.
+* Updated the background color and added an instruction box to clarify seat availability:
+   * Red indicates already booked seats.
+   * Green represents the seats booked by the user.
+   * White denotes vacant seats.
+Day 6:
+* improved the front page by adding a feature where motivational quotes appear after a 3-second delay.
+* Modified the video size so that it occupies the entire page, improving visual engagement.
+Day 7:
+* Implemented navigation flow by linking the front page to the login page.
+* Modified the login page to direct users to both the registration page and the home page.
+* Updated the seat reservation page by adding a Go Back button, allowing users to return easily.
+* Configured the Confirmation button to redirect users to the confirmation page, where a confirmation ticket is generated and displayed.
