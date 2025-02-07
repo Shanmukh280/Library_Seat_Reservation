@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2025 at 10:20 AM
+-- Generation Time: Feb 07, 2025 at 12:28 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -81,7 +81,8 @@ INSERT INTO `login_records` (`id`, `student_id`, `login_time`) VALUES
 (44, 'N210211', '2025-02-07 14:58:01'),
 (45, 'N210343', '2025-02-07 15:03:54'),
 (46, 'N140014', '2025-02-07 18:04:42'),
-(47, 'N140014', '2025-02-07 18:07:34');
+(47, 'N140014', '2025-02-07 18:07:34'),
+(48, 'N150150', '2025-02-07 20:27:14');
 
 -- --------------------------------------------------------
 
@@ -135,7 +136,8 @@ INSERT INTO `student_details` (`id`, `student_id`, `name`, `email`, `gender`, `p
 (9, 'N210210', 'Shanmukh', 'shanmuk@gmail.com', 'Male', '$2y$10$QZBlMUoXMnCC6vXI79RjXuCcBuI5CMm6xIb..WJf0xJu6KH7NymWu', 'assets/uploads/about.jpg'),
 (10, 'N210219', 'Veera Raghava', 'ragava@gmail.com', 'Male', '$2y$10$xwY5uvsQ/r1Kj3Sm0GNrzeNiVA5UF9U9W5Z6YlPBEnGW8siRChBmK', 'assets/uploads/about.jpg'),
 (17, 'N210343', 'Seetha Rama raju', 'n21034312@gmail.com', 'Male', '$2y$10$Pq6/oFmK54q7r6EtHkavAux.xABNngzWsYcVgiE8VdGoN.0/G8Y/2', 'Seetharamaraju.jpg'),
-(18, 'N140014', 'Kajal', 'n@gmail.com', 'Female', '$2y$10$R0pEi5WSCDfxbIeeJyIs9.g/MEnaw5fJmIDBBK9NOhZ1OpaBe.HIi', 'kajal.jpg');
+(18, 'N140014', 'Kajal', 'n@gmail.com', 'Female', '$2y$10$R0pEi5WSCDfxbIeeJyIs9.g/MEnaw5fJmIDBBK9NOhZ1OpaBe.HIi', 'kajal.jpg'),
+(19, 'N150150', 'Keerthi', 'keerthana@gmail.com', 'Female', '$2y$10$dh7.TA7AIPzEEWh7.Hh/duuzrG4Z4THFzWuHyBxRy8ti0FpuFypF.', 'profile.jfif');
 
 --
 -- Indexes for dumped tables
@@ -179,7 +181,7 @@ ALTER TABLE `student_details`
 -- AUTO_INCREMENT for table `login_records`
 --
 ALTER TABLE `login_records`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `seats`
@@ -197,7 +199,7 @@ ALTER TABLE `seat_reservations`
 -- AUTO_INCREMENT for table `student_details`
 --
 ALTER TABLE `student_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Constraints for dumped tables
