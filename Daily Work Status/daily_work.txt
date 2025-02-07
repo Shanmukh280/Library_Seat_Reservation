@@ -1,0 +1,18 @@
+Library Seat Reaservation 
+
+From January 7th to 31st of the January my teamates worked on the Frontend in that mean period I worked on learning the NodeJS and mongodb and set up the mongodb server.
+But it didn't work well so I decided to go with PHP, Beacuse I know it well too.
+
+1st of Febuary :
+    I understood the whole frontend code and did some changes in the registration page by reducing elements in the registration page by removing which are not needed for the furthur use.
+
+2nd of Febuary :
+    I Learned the PHP basics that how to run the code and store the files. How to make the database scripts .
+3rd of Febuary :
+    I wrote code for registration page backend and then I created a Database by storing the details of the user.
+4th of Febuary :
+    I designed the backend for Login page and Home page
+5th of Febuary :
+    I worked on the profile backend of the profile page and implented all features of it.
+6th of Febuary :
+    Uploaded the all the files into the GIT and made few changes to counter bugs.
