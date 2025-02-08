@@ -181,3 +181,26 @@ body {
 .file-upload {
     display: none;
 }
+.quote-container {
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.quote-container p {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 1.4rem;
+    font-weight: bold;
+    transition: opacity 1.5s ease-in-out;
+}
+
+#quote {
+    transition: opacity 5s ease-in-out;
+    opacity: 0;
+}
