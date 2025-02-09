@@ -1,0 +1,6 @@
+reservation/db_connect.php
+reservation/fetch_seats_booked.php
+reservation/seat_confirmation_2.php
+reservation/seat_reservation_2.php
+reservation/seat_reservation.php
+reservation/confirmation.html
